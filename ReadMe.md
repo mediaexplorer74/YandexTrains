@@ -1,8 +1,10 @@
 # YandexTrains
-Experimental UWP app
+
+This thing planned as unofficial YandexTrains app (in future).
+Experimental UWP app for W10(M)
 
 ## Screenshots
-![](Images/shot0.png)
+![](Images/shot1.png)
 
 ## Abstract
 
@@ -12,8 +14,12 @@ and use itfurther in the code
 Эта программа созданна для парсинга ответа из Яндекс.расписаний (через API) 
 и использования ответа далее в программе
 
+## Tech. details
+- App type: UWP
+- Targets: ARM; x86/64
+- Min. Win. os build (SDK): 15063 ( planned: 10240 )
  
-## How to start
+## How to start your RnD
 To start the developing you need to get an api key on yandex developers page. Free plan on api
 key is enough to test it (500 requests every 24 hours)
 
@@ -82,7 +88,6 @@ suburban то скопируйте ID станции.
 Right now there is only 3 functions
 
 Сейчас написано только 3 функции
-
  
 
 1.  station_timetable_get()
@@ -105,7 +110,6 @@ station is station code. This is pretty much self-explanatory
 
 from_station is a variable that sets the output to departure or to arrival
 
- 
 
 Эта функция возращает лист с расписанием станции со всеми прибытиями или
 отправлениями
@@ -118,13 +122,8 @@ station это код станции. Тут все довольно таки п
 from_station - эта переменная устанавливет вывод либо только прибытий, либо
 только отправлений
 
- 
 
-Вывод функции / function output
 
-![](Images/shot1.png)
-
- 
 
 ### route_time_get(string date, string from, string to)
 
@@ -150,11 +149,7 @@ station это код станции. Тут все довольно таки п
 
 from и to это ID станций
 
-Вывод функции / function output
 
-![](Images/shot2.png)
-
- 
 
 Даты / dates
 ------------
@@ -184,7 +179,13 @@ To-Do
 2.  Сделать проверку на дату \| Make a function that checks the date
 
 3.  Сделать получение всех станций по направлению автоматически \| Make getting
-    station ID’s automatic ✓
+    station ID’s automatic \|
 
 4.  Попробавть дописать модуль работы с алисой \| Try to make it work with alice
     voice assistant
+
+## ..
+As is. No support. RnD only. DIY
+
+## .
+MediaExplorer 2022-2023
