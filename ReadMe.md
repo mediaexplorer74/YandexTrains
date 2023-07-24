@@ -1,18 +1,18 @@
-# YandexTrains - __dev__ branch
+# Trains Schedule
 
-This thing planned as unofficial YandexTrains app (in future).
-Experimental UWP app for W10(M)
+## About 
+- Show schedule of suburban electric trains using [Yandex API][yandex]
+- Android application. 
 
 ## Screenshots
 ![](Images/shot1.png)
 
-## Win SDK (W10M compatibility)
+## Used libraries
+[Robospice][Robospice] - library for building network async apps  
+[Retrofit][Retrofit] - library for working with REST API
 
-Normal : 10.0.15063.0
-Minimal: 10.0.10586.0
-
-## ..
-As is. No support. RnD only. DIY
-
-## .
-MediaExplorer 2022-2023
+## References
+[Main]: https://github.com/Rexee/TrainsSchedule "Original Java Version"
+[yandex]: https://tech.yandex.ru/rasp/raspapi "Yandex API"
+[Robospice]: https://github.com/stephanenicolas/robospice "Robospice"
+[Retrofit]: http://square.github.io/retrofit "Retrofit"
