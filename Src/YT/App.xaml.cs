@@ -1,6 +1,4 @@
-﻿// App (Application)
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,15 +15,13 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace YandexTrains
+namespace YT
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {
-        private readonly Utilities.ILog _logger;
-
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -34,8 +30,6 @@ namespace YandexTrains
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
-            _logger = new Utilities.OutputLogger(nameof(App));
         }
 
         /// <summary>
@@ -43,8 +37,14 @@ namespace YandexTrains
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override async void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+              //  this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -76,16 +76,6 @@ namespace YandexTrains
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
-            }
-
-            // Initialize data provider passthrough class
-            try
-            {
-                await DataProvider.TripPlannerProviderPassthrough.Initialize();
-            }
-            catch (Exception ex)
-            {
-                _logger.Log($"Something went wrong on application launch: {ex.Message}", "Error");
             }
         }
 
